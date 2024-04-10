@@ -1,8 +1,17 @@
-# Data Collection using R
+Project Title: Data Collection using R
 
-The project contains two Scripts. One of them is the Scrapping.R file, which contains the bulk of our code, and requires five packages: stringr, xml2, XML,writexl and rvest. 
-This RScript will first retrieve the URLs for every article published in Mobile DNA in a particular year (The input will be given by the user). Following, the program will go to each one of those URLs and crawl the site to record the following information about each article: Title, Authors, Author Affiliations, Correspondence Author, Publish Date, Abstract, Keywords, Full Paper (Text format). 
+Description/Problem Statement:
+The project involved developing two scripts: Scrapping.R and After.R, for comprehensive data collection from the Mobile DNA journal. The Scrapping.R script utilizes various R packages such as stringr, xml2, XML, writexl, and rvest to retrieve article information, including title, authors, affiliations, publication date, abstract, keywords, and more, from Mobile DNA articles for a specified year. The collected data is then organized into a dataframe and exported to both a plain text file (Summary.txt) and an Excel file (summary.xlsx), excluding full-text due to character limitations.
 
-The correspondence author’s email is not included because the field information was unavailable in the journal. After all this information has been recorded, the program will generate a data frame, and from it will generate a plain text file called Summary.txt and write all the gathered information into the summary.txt text file. Additionally, it also generates an excel file summary.xlsx which includes all the fields except “Full-text”. The reason it doesn’t include a full-text field is that it exceeds Excel’s character limit of 32,767 characters. 
+Skills Utilized:
+- Data Scraping
+- R Programming
+- Data Manipulation
+- Package Management (stringr, xml2, XML, writexl, rvest)
 
-Scraping.R only gets the desired information for one particular year. In order to get that information for all the years after the input year, we use the After.R file. This is the RScript with which the user directly interacts. It asks the user for an input year, and it will call the Scraping.R program for every year between the input year and 2020. Hence after After.R has finished running, there will be Summary.txt file which contains the aforementioned information for every article published by Mobile DNA in and after the input year. 
+Solution:
+- The Scrapping.R script first retrieves the URLs for all articles published in Mobile DNA for a specified year provided by the user.
+- It then crawls each URL to extract relevant information about each article, such as title, authors, affiliations, publication date, abstract, and keywords.
+- The collected data is structured into a dataframe and exported to a plain text file (Summary.txt) and an Excel file (summary.xlsx), omitting the full-text due to Excel's character limit.
+- To collect data for multiple years, the After.R script interacts with the user, prompting for an input year. It then iterates through all years from the input year to 2020, calling Scrapping.R for each year.
+- Upon completion, Summary.txt contains comprehensive information for all Mobile DNA articles published in and after the input year.
